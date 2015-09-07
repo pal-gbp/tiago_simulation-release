@@ -1,0 +1,12 @@
+Source: ros-indigo-tiago-gazebo
+Section: misc
+Priority: extra
+Maintainer: PAL Robotics <maintainer@pal-robotics.com>
+Build-Depends: debhelper (>= 9.0.0), ros-indigo-catkin
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-indigo-tiago-gazebo
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-indigo-gazebo-plugins, ros-indigo-play-motion-msgs, ros-indigo-rospy, ros-indigo-tiago-bringup, ros-indigo-tiago-controller-configuration, ros-indigo-tiago-description
+Description: The tiago_gazebo package

@@ -1,0 +1,10 @@
+ros-indigo-tiago-gazebo (0.0.1-0trusty) trusty; urgency=high
+
+  * Update maintainer email
+  * Update package xmls
+  * First tiago release
+  * Contributors: Bence Magyar
+
+ -- PAL Robotics <maintainer@pal-robotics.com>  Sun, 06 Sep 2015 23:00:00 -0000
+
+
