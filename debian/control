@@ -1,0 +1,12 @@
+Source: ros-indigo-tiago-simulation
+Section: misc
+Priority: extra
+Maintainer: PAL Robotics <maintainer@pal-robotics.com>
+Build-Depends: debhelper (>= 9.0.0), ros-indigo-catkin
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-indigo-tiago-simulation
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-indigo-tiago-gazebo, ros-indigo-tiago-hardware-gazebo
+Description: The tiago_simulation package
