@@ -1,0 +1,12 @@
+Source: ros-indigo-tiago-hardware-gazebo
+Section: misc
+Priority: extra
+Maintainer: PAL Robotics <maintainer@pal-robotics.com>
+Build-Depends: debhelper (>= 9.0.0), gazebo2, ros-indigo-angles, ros-indigo-catkin, ros-indigo-control-toolbox, ros-indigo-gazebo-ros-control, ros-indigo-hardware-interface, ros-indigo-joint-limits-interface
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-indigo-tiago-hardware-gazebo
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, gazebo2, ros-indigo-control-toolbox, ros-indigo-gazebo-ros-control, ros-indigo-hardware-interface, ros-indigo-joint-limits-interface
+Description: Gazebo plugin to control a Tiago robot in simulation.
