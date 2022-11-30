@@ -1,0 +1,338 @@
+ros-humble-tiago-simulation (4.0.0-1bullseye) bullseye; urgency=high
+
+  * Merge branch 'update_copyright' into 'humble-devel'
+    Update copyright
+    See merge request robots/tiago_simulation!89
+  * update license
+  * Merge branch 'update_maintainers' into 'humble-devel'
+    Update maintainers
+    See merge request robots/tiago_simulation!88
+  * update maintainers
+  * package.xml and CMakeLists.txt to ros2 format
+  * Contributors: Jordan Palacios, Noel Jimenez
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Wed, 30 Nov 2022 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.23-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Thu, 30 Jul 2020 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.22-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Tue, 21 Apr 2020 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.21-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Wed, 26 Feb 2020 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.20-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Mon, 04 Nov 2019 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.19-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Wed, 23 Oct 2019 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.18-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Tue, 15 Oct 2019 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.17-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Tue, 15 Oct 2019 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.16-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Thu, 10 Oct 2019 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.15-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Wed, 25 Sep 2019 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.14-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Mon, 23 Sep 2019 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.13-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Mon, 23 Sep 2019 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.12-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Wed, 07 Aug 2019 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.11-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Thu, 01 Aug 2019 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.10-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Wed, 17 Jul 2019 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.9-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Tue, 09 Jul 2019 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.8-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Wed, 03 Jul 2019 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.7-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Mon, 17 Jun 2019 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.6-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Tue, 26 Mar 2019 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.5-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Thu, 14 Mar 2019 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.4-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Tue, 26 Feb 2019 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.3-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Wed, 23 Jan 2019 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.2-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Wed, 23 Jan 2019 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.1-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Thu, 20 Dec 2018 00:00:00 -0000
+
+ros-humble-tiago-simulation (2.0.0-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Wed, 19 Dec 2018 00:00:00 -0000
+
+ros-humble-tiago-simulation (1.0.11-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Mon, 26 Nov 2018 00:00:00 -0000
+
+ros-humble-tiago-simulation (1.0.10-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Mon, 26 Nov 2018 00:00:00 -0000
+
+ros-humble-tiago-simulation (1.0.9-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Fri, 26 Oct 2018 00:00:00 -0000
+
+ros-humble-tiago-simulation (1.0.8-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Fri, 28 Sep 2018 00:00:00 -0000
+
+ros-humble-tiago-simulation (1.0.7-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Mon, 30 Jul 2018 00:00:00 -0000
+
+ros-humble-tiago-simulation (1.0.6-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Fri, 06 Jul 2018 00:00:00 -0000
+
+ros-humble-tiago-simulation (1.0.5-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Tue, 05 Jun 2018 00:00:00 -0000
+
+ros-humble-tiago-simulation (1.0.4-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Wed, 16 May 2018 00:00:00 -0000
+
+ros-humble-tiago-simulation (1.0.3-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Tue, 10 Apr 2018 00:00:00 -0000
+
+ros-humble-tiago-simulation (1.0.2-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Thu, 29 Mar 2018 00:00:00 -0000
+
+ros-humble-tiago-simulation (1.0.1-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Mon, 26 Mar 2018 00:00:00 -0000
+
+ros-humble-tiago-simulation (1.0.0-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Mon, 26 Mar 2018 00:00:00 -0000
+
+ros-humble-tiago-simulation (0.0.18-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Wed, 21 Mar 2018 00:00:00 -0000
+
+ros-humble-tiago-simulation (0.0.17-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Tue, 20 Feb 2018 00:00:00 -0000
+
+ros-humble-tiago-simulation (0.0.16-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Fri, 16 Feb 2018 00:00:00 -0000
+
+ros-humble-tiago-simulation (0.0.15-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Wed, 24 Jan 2018 00:00:00 -0000
+
+ros-humble-tiago-simulation (0.0.14-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Tue, 07 Nov 2017 00:00:00 -0000
+
+ros-humble-tiago-simulation (0.0.13-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Thu, 02 Nov 2017 00:00:00 -0000
+
+ros-humble-tiago-simulation (0.0.12-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Tue, 30 May 2017 00:00:00 -0000
+
+ros-humble-tiago-simulation (0.0.11-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Tue, 16 May 2017 00:00:00 -0000
+
+ros-humble-tiago-simulation (0.0.10-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Fri, 21 Oct 2016 00:00:00 -0000
+
+ros-humble-tiago-simulation (0.0.9-1bullseye) bullseye; urgency=high
+
+  * set myself as maintainer
+  * Contributors: Jordi Pages
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Fri, 14 Oct 2016 00:00:00 -0000
+
+ros-humble-tiago-simulation (0.0.7-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Wed, 15 Jun 2016 00:00:00 -0000
+
+ros-humble-tiago-simulation (0.0.6-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Wed, 15 Jun 2016 00:00:00 -0000
+
+ros-humble-tiago-simulation (0.0.5-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Wed, 15 Jun 2016 00:00:00 -0000
+
+ros-humble-tiago-simulation (0.0.4-1bullseye) bullseye; urgency=high
+
+
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Wed, 15 Jun 2016 00:00:00 -0000
+
+ros-humble-tiago-simulation (0.0.3-1bullseye) bullseye; urgency=high
+
+  * Update package.xml to pull pal_hardware_gazebo dependence
+  * Contributors: Sam Pfeiffer
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Tue, 14 Jun 2016 00:00:00 -0000
+
+ros-humble-tiago-simulation (0.0.2-1bullseye) bullseye; urgency=high
+
+  * Fix depend
+  * Contributors: Bence Magyar
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Wed, 15 Apr 2015 00:00:00 -0000
+
+ros-humble-tiago-simulation (0.0.1-1bullseye) bullseye; urgency=high
+
+  * Initial commit of tiago_simulation
+  * Contributors: Bence Magyar
+
+ -- Jordan Palacios <jordan.palacios@pal-robotics.com>  Wed, 15 Apr 2015 00:00:00 -0000
+
+
