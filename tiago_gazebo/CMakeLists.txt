@@ -1,12 +1,20 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.4.0)
 project(tiago_gazebo)
-find_package(catkin REQUIRED COMPONENTS)
-catkin_package()
 
-foreach(dir config launch Media models worlds)
-    install(DIRECTORY ${dir}/
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
-endforeach(dir)
+find_package(ament_cmake_auto REQUIRED)
 
-install(PROGRAMS scripts/tuck_arm.py
-        DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+# PAL Robotics stricter build flags, other developers should not worry about this
+find_package(ament_cmake_pal QUIET)
+
+install(
+  PROGRAMS scripts/tuck_arm.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+if(BUILD_TESTING)
+  find_package(ament_lint_auto REQUIRED)
+  ament_lint_auto_find_test_dependencies()
+endif()
+
+# Media commented out
+ament_auto_package(INSTALL_TO_SHARE launch models worlds)
