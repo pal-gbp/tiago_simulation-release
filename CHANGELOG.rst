@@ -2,6 +2,9 @@
 Changelog for package tiago_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+4.0.1 (2023-02-08)
+------------------
+
 4.0.0 (2022-11-30)
 ------------------
 * Merge branch 'update_copyright' into 'humble-devel'
