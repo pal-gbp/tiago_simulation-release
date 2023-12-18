@@ -2,6 +2,17 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+4.0.5 (2023-11-14)
+------------------
+* Add website tag
+* Contributors: Noel Jimenez
+
+4.0.4 (2023-11-13)
+------------------
+* Set use_sim_time true
+* Remove pal flags dependency
+* Contributors: Noel Jimenez
+
 4.0.3 (2023-06-16)
 ------------------
 * Merge branch 'fix/set-is-robot' into 'humble-devel'
