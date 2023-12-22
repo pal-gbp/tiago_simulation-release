@@ -2,6 +2,11 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+4.0.7 (2023-12-22)
+------------------
+* changing package name of hey5 into the new one: pal_hey5
+* Contributors: Aina Irisarri
+
 4.0.6 (2023-12-20)
 ------------------
 * move world_name to pal_gazebo_worlds
