@@ -2,6 +2,11 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+4.0.8 (2024-01-19)
+------------------
+* Adding pal_robotiq_description in the package list
+* Contributors: Aina Irisarri
+
 4.0.7 (2023-12-22)
 ------------------
 * changing package name of hey5 into the new one: pal_hey5
