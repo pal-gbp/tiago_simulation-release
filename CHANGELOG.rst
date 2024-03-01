@@ -2,6 +2,19 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+4.1.0 (2024-02-28)
+------------------
+* Launch MoveIt 2 by default
+* Contributors: Noel Jimenez
+
+4.0.9 (2024-02-02)
+------------------
+* Merge branch 'feat/register-components' into 'humble-devel'
+  use single entry point for navigation
+  See merge request robots/tiago_simulation!133
+* use single entry point for navigation
+* Contributors: antoniobrandi
+
 4.0.8 (2024-01-19)
 ------------------
 * Adding pal_robotiq_description in the package list
