@@ -1,4 +1,4 @@
-# Copyright (c) 2022 PAL Robotics S.L. All rights reserved.
+# Copyright (c) 2024 PAL Robotics S.L. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,127 +14,165 @@
 
 import os
 from os import environ, pathsep
-
-from ament_index_python.packages import get_package_prefix, get_package_share_directory
-
+from ament_index_python.packages import get_package_prefix
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable
+from launch.actions import DeclareLaunchArgument, SetEnvironmentVariable, SetLaunchConfiguration
 from launch.conditions import IfCondition
-from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
-
-from launch_pal.include_utils import include_launch_py_description
-
+from launch_pal.include_utils import include_scoped_launch_py_description
+from launch_pal.arg_utils import LaunchArgumentsBase
+from dataclasses import dataclass
+from launch_pal.arg_utils import CommonArgs
 from launch_ros.actions import Node
+from launch_pal.robot_arguments import TiagoArgs
+from launch_pal.actions import CheckPublicSim
 
 
-def get_model_paths(packages_names):
-    model_paths = ''
-    for package_name in packages_names:
-        if model_paths != '':
-            model_paths += pathsep
+@dataclass(frozen=True)
+class LaunchArguments(LaunchArgumentsBase):
 
-        package_path = get_package_prefix(package_name)
-        model_path = os.path.join(package_path, 'share')
+    base_type: DeclareLaunchArgument = TiagoArgs.base_type
+    has_screen: DeclareLaunchArgument = TiagoArgs.has_screen
+    arm_type: DeclareLaunchArgument = TiagoArgs.arm_type
+    end_effector: DeclareLaunchArgument = TiagoArgs.end_effector
+    ft_sensor: DeclareLaunchArgument = TiagoArgs.ft_sensor
+    wrist_model: DeclareLaunchArgument = TiagoArgs.wrist_model
+    camera_model: DeclareLaunchArgument = TiagoArgs.camera_model
+    laser_model: DeclareLaunchArgument = TiagoArgs.laser_model
 
-        model_paths += model_path
-
-    return model_paths
-
-
-def get_resource_paths(packages_names):
-    resource_paths = ''
-    for package_name in packages_names:
-        if resource_paths != '':
-            resource_paths += pathsep
-
-        package_path = get_package_prefix(package_name)
-        resource_paths += package_path
-
-    return resource_paths
+    navigation: DeclareLaunchArgument = CommonArgs.navigation
+    moveit: DeclareLaunchArgument = CommonArgs.moveit
+    world_name: DeclareLaunchArgument = CommonArgs.world_name
+    namespace: DeclareLaunchArgument = CommonArgs.namespace
+    is_public_sim: DeclareLaunchArgument = CommonArgs.is_public_sim
 
 
 def generate_launch_description():
 
-    navigation_arg = DeclareLaunchArgument(
-        'navigation', default_value='false',
-        description='Specify if launching Navigation2'
-    )
+    # Create the launch description and populate
+    ld = LaunchDescription()
+    launch_arguments = LaunchArguments()
 
-    moveit_arg = DeclareLaunchArgument(
-        'moveit', default_value='true',
-        description='Specify if launching MoveIt 2'
-    )
+    launch_arguments.add_to_launch_description(ld)
 
-    gazebo = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([os.path.join(
-            get_package_share_directory('pal_gazebo_worlds'),
-            'launch'), '/pal_gazebo.launch.py']),
-    )
+    declare_actions(ld, launch_arguments)
 
-    tiago_spawn = include_launch_py_description(
-        'tiago_gazebo', ['launch', 'tiago_spawn.launch.py'],
-        launch_arguments={'use_sim_time': 'True'}.items())
+    return ld
 
-    tiago_bringup = include_launch_py_description(
-        'tiago_bringup', ['launch', 'tiago_bringup.launch.py'],
-        launch_arguments={'use_sim_time': 'True'}.items())
 
-    navigation = include_launch_py_description(
-        'tiago_2dnav', ['launch', 'tiago_nav_bringup.launch.py'],
+def declare_actions(
+    launch_description: LaunchDescription, launch_args: LaunchArguments
+):
+    # Set use_sim_time to True
+    set_sim_time = SetLaunchConfiguration("use_sim_time", "True")
+    launch_description.add_action(set_sim_time)
+
+    # Shows error if is_public_sim is not set to True when using public simulation
+    public_sim_check = CheckPublicSim()
+    launch_description.add_action(public_sim_check)
+
+    robot_name = 'tiago'
+    packages = ['tiago_description', 'pmb2_description',
+                'pal_hey5_description', 'pal_gripper_description',
+                'pal_robotiq_description', 'omni_base_description']
+
+    model_path = get_model_paths(packages)
+
+    gazebo_model_path_env_var = SetEnvironmentVariable(
+        'GAZEBO_MODEL_PATH', model_path)
+
+    gazebo = include_scoped_launch_py_description(
+        pkg_name='pal_gazebo_worlds',
+        paths=['launch', 'pal_gazebo.launch.py'],
+        env_vars=[gazebo_model_path_env_var],
         launch_arguments={
-            'use_sim_time': 'True',
-            'remappings_file': os.path.join(
-                get_package_share_directory('tiago_2dnav'),
-                'params',
-                'tiago_remappings_sim.yaml')
-        }.items(),
+            "world_name":  launch_args.world_name,
+            "model_paths": packages,
+            "resource_paths": packages,
+        })
+
+    launch_description.add_action(gazebo)
+
+    navigation = include_scoped_launch_py_description(
+        pkg_name='tiago_2dnav',
+        paths=['launch', 'tiago_nav_bringup.launch.py'],
+        launch_arguments={
+            "robot_name":  robot_name,
+            "is_public_sim": launch_args.is_public_sim,
+            "laser":  launch_args.laser_model,
+            "base_type": launch_args.base_type,
+            "world_name": launch_args.world_name,
+        },
         condition=IfCondition(LaunchConfiguration('navigation')))
 
-    move_group = include_launch_py_description(
-        'tiago_moveit_config', ['launch', 'move_group.launch.py'],
-        launch_arguments={'use_sim_time': 'True'}.items(),
+    launch_description.add_action(navigation)
+
+    move_group = include_scoped_launch_py_description(
+        pkg_name='tiago_moveit_config',
+        paths=['launch', 'move_group.launch.py'],
+        launch_arguments={
+            "robot_name": robot_name,
+            "use_sim_time": LaunchConfiguration("use_sim_time"),
+            "namespace": launch_args.namespace,
+            "base_type": launch_args.base_type,
+            "arm_type": launch_args.arm_type,
+            "end_effector": launch_args.end_effector,
+            "ft_sensor": launch_args.ft_sensor
+        },
         condition=IfCondition(LaunchConfiguration('moveit')))
+
+    launch_description.add_action(move_group)
+
+    robot_spawn = include_scoped_launch_py_description(
+        pkg_name='tiago_gazebo',
+        paths=['launch', 'robot_spawn.launch.py'],
+        launch_arguments={
+            'robot_name': robot_name,
+            'base_type': launch_args.base_type}
+    )
+
+    launch_description.add_action(robot_spawn)
+
+    tiago_bringup = include_scoped_launch_py_description(
+        pkg_name='tiago_bringup', paths=['launch', 'tiago_bringup.launch.py'],
+        launch_arguments={
+            "use_sim_time": LaunchConfiguration("use_sim_time"),
+            "arm_type": launch_args.arm_type,
+            "laser_model": launch_args.laser_model,
+            "camera_model": launch_args.camera_model,
+            "base_type": launch_args.base_type,
+            "wrist_model": launch_args.wrist_model,
+            "ft_sensor": launch_args.ft_sensor,
+            "end_effector": launch_args.end_effector,
+            "has_screen": launch_args.has_screen,
+            "is_public_sim": launch_args.is_public_sim,
+        }
+    )
+
+    launch_description.add_action(tiago_bringup)
 
     tuck_arm = Node(package='tiago_gazebo',
                     executable='tuck_arm.py',
                     emulate_tty=True,
-                    output='both',
-                    parameters=[{'use_sim_time': True}])
+                    output='both')
 
-    # @TODO: review pal_gazebo
-    # @TODO: review tiago_spawn
-    # @TODO: simulation_tiago_bringup?
-    # @TODO: pal_pcl_points_throttle_and_filter
+    launch_description.add_action(tuck_arm)
 
-    packages = ['tiago_description', 'pmb2_description',
-                'pal_hey5_description', 'pal_gripper_description',
-                'pal_robotiq_description']
-    model_path = get_model_paths(packages)
-    resource_path = get_resource_paths(packages)
+    return
+
+
+def get_model_paths(packages_names):
+    model_paths = ""
+    for package_name in packages_names:
+        if model_paths != "":
+            model_paths += pathsep
+
+        package_path = get_package_prefix(package_name)
+        model_path = os.path.join(package_path, "share")
+
+        model_paths += model_path
 
     if 'GAZEBO_MODEL_PATH' in environ:
-        model_path += pathsep + environ['GAZEBO_MODEL_PATH']
+        model_paths += pathsep + environ['GAZEBO_MODEL_PATH']
 
-    if 'GAZEBO_RESOURCE_PATH' in environ:
-        resource_path += pathsep + environ['GAZEBO_RESOURCE_PATH']
-
-    # Create the launch description and populate
-    ld = LaunchDescription()
-
-    ld.add_action(SetEnvironmentVariable('GAZEBO_MODEL_PATH', model_path))
-    # Using this prevents shared library from being found
-    # ld.add_action(SetEnvironmentVariable('GAZEBO_RESOURCE_PATH', tiago_resource_path))
-
-    ld.add_action(gazebo)
-    ld.add_action(tiago_spawn)
-    ld.add_action(tiago_bringup)
-
-    ld.add_action(navigation_arg)
-    ld.add_action(navigation)
-
-    ld.add_action(moveit_arg)
-    ld.add_action(move_group)
-    ld.add_action(tuck_arm)
-
-    return ld
+    return model_paths
