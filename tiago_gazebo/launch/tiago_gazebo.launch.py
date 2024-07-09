@@ -41,6 +41,8 @@ class LaunchArguments(LaunchArgumentsBase):
     laser_model: DeclareLaunchArgument = TiagoArgs.laser_model
 
     navigation: DeclareLaunchArgument = CommonArgs.navigation
+    advanced_navigation: DeclareLaunchArgument = CommonArgs.advanced_navigation
+    slam: DeclareLaunchArgument = CommonArgs.slam
     moveit: DeclareLaunchArgument = CommonArgs.moveit
     world_name: DeclareLaunchArgument = CommonArgs.world_name
     namespace: DeclareLaunchArgument = CommonArgs.namespace
@@ -102,10 +104,22 @@ def declare_actions(
             "laser":  launch_args.laser_model,
             "base_type": launch_args.base_type,
             "world_name": launch_args.world_name,
+            'slam': launch_args.slam,
+            'use_sim_time': LaunchConfiguration('use_sim_time'),
         },
         condition=IfCondition(LaunchConfiguration('navigation')))
 
     launch_description.add_action(navigation)
+
+    advanced_navigation = include_scoped_launch_py_description(
+        pkg_name='tiago_advanced_2dnav',
+        paths=['launch', 'tiago_advanced_nav_bringup.launch.py'],
+        launch_arguments={
+            "base_type": launch_args.base_type,
+        },
+        condition=IfCondition(LaunchConfiguration('advanced_navigation')))
+
+    launch_description.add_action(advanced_navigation)
 
     move_group = include_scoped_launch_py_description(
         pkg_name='tiago_moveit_config',
