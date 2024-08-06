@@ -2,6 +2,11 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+4.1.9 (2024-07-23)
+------------------
+* added tuck arm arg and condition
+* Contributors: sergiacosta
+
 4.1.8 (2024-07-08)
 ------------------
 * Merge branch 'fix/enable_slam' into 'humble-devel'
