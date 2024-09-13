@@ -2,6 +2,11 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+4.2.0 (2024-08-22)
+------------------
+* Add motor model parameter
+* Contributors: Aina
+
 4.1.9 (2024-07-23)
 ------------------
 * added tuck arm arg and condition
