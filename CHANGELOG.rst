@@ -2,6 +2,41 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+4.7.0 (2025-05-07)
+------------------
+* add use_sim_time to robot_info
+* Contributors: antoniobrandi
+
+4.6.0 (2025-05-06)
+------------------
+* rviz use_sim_time
+* Contributors: antoniobrandi
+
+4.5.2 (2025-05-05)
+------------------
+* fix nav deps
+* Contributors: andreacapodacqua
+
+4.5.1 (2025-04-09)
+------------------
+* rviz_config_file public_nav
+* Contributors: salvatorepiccolo
+
+4.5.0 (2025-04-03)
+------------------
+* store robot_info in tmp
+* Contributors: antoniobrandi
+
+4.4.0 (2025-04-03)
+------------------
+* adopt pal_configuration
+* Contributors: antoniobrandi
+
+4.3.1 (2025-03-14)
+------------------
+* Use motion information to check final positions
+* Contributors: vamsiguda
+
 4.3.0 (2024-10-17)
 ------------------
 * Merge branch 'man/feta/nav-rviz-config' into 'humble-devel'
