@@ -1,3 +1,31 @@
+## tiago_simulation (humble) - 4.8.0-1
+
+The packages in the `tiago_simulation` repository were released into the `humble` distro by running `/usr/bin/bloom-release --track humble --rosdistro humble tiago_simulation -y` on `Fri, 31 Oct 2025 07:36:18 -0000`
+
+These packages were released:
+- `tiago_gazebo`
+- `tiago_simulation`
+
+These packages were explicitly ignored:
+- `tiago_multi`
+
+Version of package(s) in repository `tiago_simulation`:
+
+- upstream repository: https://github.com/pal-robotics/tiago_simulation
+- release repository: https://github.com/pal-gbp/tiago_simulation-release.git
+- rosdistro version: `4.7.1-1`
+- old version: `4.7.1-1`
+- new version: `4.8.0-1`
+
+Versions of tools used:
+
+- bloom version: `0.13.0`
+- catkin_pkg version: `1.1.0`
+- rosdep version: `0.26.0`
+- rosdistro version: `1.0.1`
+- vcstools version: `0.1.42`
+
+
 ## tiago_simulation (humble) - 4.7.1-1
 
 The packages in the `tiago_simulation` repository were released into the `humble` distro by running `/usr/bin/bloom-release --track humble --rosdistro humble tiago_simulation -y` on `Wed, 18 Jun 2025 14:15:29 -0000`
