@@ -2,6 +2,27 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+4.10.1 (2026-02-10)
+-------------------
+* formatting problem
+* base type arg added for pub nav
+* Contributors: Michela Cavuoto
+
+4.10.0 (2026-01-12)
+-------------------
+* Add support for new gazebo
+* Contributors: Noel Jimenez
+
+4.9.1 (2025-12-15)
+------------------
+* missing deps
+* Contributors: antoniobrandi
+
+4.9.0 (2025-12-11)
+------------------
+* Point Cloud filter pipeline
+* Contributors: antoniobrandi
+
 4.8.0 (2025-10-09)
 ------------------
 * added gzclient and rviz args
